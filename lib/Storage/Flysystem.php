@@ -32,7 +32,7 @@ abstract class Flysystem extends \OC\Files\Storage\Flysystem
     protected function getContents()
     {
         if (count($this->cacheFileObjects) === 0) {
-            $this->cacheFileObjects = $this->flysystem->listContents($this->root);
+            $this->cacheFileObjects = $this->flysystem->listContents($this->root,true);
         }
 
         return $this->cacheFileObjects;
